@@ -6,7 +6,28 @@ internal class Program
 {
     static void Main(string[] args)
     {
-        /*Console.WriteLine($"Guess numbers between 1 and {HiLoGame.MAXIMUM}.");
+        VendingMachine vendingMachine = new AnimalFeedVendingMachine();
+        //AnimalFeedVendingMachine vendingMachines = new VendingMachine();
+        Console.WriteLine(vendingMachine.GetType().Name);
+        Console.WriteLine(vendingMachine.Dispense(2.00M));
+        /*
+         * while (true)
+        {
+            Bird bird;
+            Console.Write("\nPress P for pigeon, O for ostrich: ");
+            char key = Char.ToUpper(Console.ReadKey().KeyChar);
+            if (key == 'P') bird = new Pigeon();
+            else if (key == 'O') bird = new Ostrich();
+            else return;
+            Console.Write("\nHow many eggs should it lay? ");
+            if (!int.TryParse(Console.ReadLine(), out int numberOfEggs)) return;
+            Egg[] eggs = bird.LayEggs(numberOfEggs);
+            foreach (Egg egg in eggs)
+            {
+                Console.WriteLine(egg.Description);
+            }
+        }
+        Console.WriteLine($"Guess numbers between 1 and {HiLoGame.MAXIMUM}.");
         HiLoGame.Hint();
         while (HiLoGame.GetPot() > 0)
         {
@@ -18,7 +39,7 @@ internal class Program
             else if (key == '?') HiLoGame.Hint();
             else return;
         }
-        Console.WriteLine("The pot is empty. Bye!");*/
+        Console.WriteLine("The pot is empty. Bye!");
 
         Console.WriteLine("How many bullets?");
         int.TryParse(Console.ReadLine(), out int bullets);
@@ -39,8 +60,8 @@ internal class Program
             else if (key == '+') gun.Balls += gun.MagazineSize;
             else if (key == 'q') return;
         }
-
-        /*Guy joe = new Guy() { Cash = 50, Name = "Joe" };
+        
+        Guy joe = new Guy() { Cash = 50, Name = "Joe" };
         Guy bob = new Guy() { Cash = 100, Name = "Bob" };
 
         if (0.1F + 0.2F == 0.3F) Console.WriteLine("They're equal");
