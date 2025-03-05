@@ -10,6 +10,13 @@ internal class Program
         //AnimalFeedVendingMachine vendingMachines = new VendingMachine();
         Console.WriteLine(vendingMachine.GetType().Name);
         Console.WriteLine(vendingMachine.Dispense(2.00M));
+
+        SafeOwner owner = new SafeOwner();
+        Safe safe = new Safe();
+        JewelThief jewelThief = new JewelThief();
+        jewelThief.ReturnContents("", owner);
+        jewelThief.OpenSafe(safe, owner);
+        Console.ReadKey(true);
         /*
          * while (true)
         {
